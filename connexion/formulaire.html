@@ -15,46 +15,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CapitalPro - Prêts en un clic</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <header class="sticky top-0 z-50 bg-white shadow-sm">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center">
-                <i class="fas fa-hand-holding-usd text-3xl text-blue-600 mr-2"></i>
-                <span class="text-2xl font-bold text-blue-800">Pro<span class="text-blue-600">Finance</span></span>
-            </div>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#accueil" class="font-medium hover:text-blue-600 transition">Accueil</a>
-                <a href="#services" class="font-medium hover:text-blue-600 transition">Nos services</a>
-                <a href="#avantages" class="font-medium hover:text-blue-600 transition">Avantages</a>
-                <a href="#simulateur" class="font-medium hover:text-blue-600 transition">Simulateur</a>
-                <a href="#contact" class="font-medium hover:text-blue-600 transition">Contact</a>
-            </nav>
-            <div class="flex items-center space-x-4">
-                <a href="connexion/formulaire.html#container" class="hidden md:block px-4 py-2 rounded-lg hover:bg-gray-100 transition">Connexion</a>
-                <a href="#demande" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition shadow-md">Demande en ligne</a>
-                <button id="mobile-menu-button" class="md:hidden text-gray-600">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
-                <a href="#accueil" class="py-2 hover:text-blue-600 transition">Accueil</a>
-                <a href="#services" class="py-2 hover:text-blue-600 transition">Nos services</a>
-                <a href="#avantages" class="py-2 hover:text-blue-600 transition">Avantages</a>
-                <a href="#simulateur" class="py-2 hover:text-blue-600 transition">Simulateur</a>
-                <a href="#contact" class="py-2 hover:text-blue-600 transition">Contact</a>
-                <div class="pt-2 border-t">
-                    <a href="connexion/formulaire.html#container" class="block py-2 hover:text-blue-600 transition">Connexion</a>
-                </div>
-            </div>
-        </div>
-    </header>
+    <a href="/index.html" class="home-btn">
+        <span>Accueil</span>
+        <i class='bx bx-home'></i>
+    </a>
     <div class="container" id="container">
         <div class="form-box login">
             <form action="#">
@@ -73,10 +40,10 @@
                 <button type="submit" class="btn">connexion</button>
                 <p>ou se connecter avec un réseau social</p>
                 <div class="social-icons">
-                    <a href="#"><i class='bx bxl-google' ></i></a>
-                    <a href="#"><i class='bx bxl-facebook' ></i></a>
-                    <a href="#"><i class='bx bxl-github' ></i></a>
-                    <a href="#"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="https://accounts.google.com/o/oauth2/auth" class="social-login" data-provider="google"><i class='bx bxl-google'></i></a>
+                    <a href="https://www.facebook.com/v10.0/dialog/oauth" class="social-login" data-provider="facebook"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://github.com/login/oauth/authorize" class="social-login" data-provider="github"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.linkedin.com/oauth/v2/authorization" class="social-login" data-provider="linkedin"><i class='bx bxl-linkedin'></i></a>
                 </div>
             </form>
         </div>
@@ -99,10 +66,10 @@
                 <button type="submit" class="btn">S'inscrire</button>
                 <p>ou se connecter avec un réseau social</p>
                 <div class="social-icons">
-                    <a href="#"><i class='bx bxl-google' ></i></a>
-                    <a href="#"><i class='bx bxl-facebook' ></i></a>
-                    <a href="#"><i class='bx bxl-github' ></i></a>
-                    <a href="#"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="https://accounts.google.com/o/oauth2/auth" class="social-login" data-provider="google"><i class='bx bxl-google'></i></a>
+                    <a href="https://www.facebook.com/v10.0/dialog/oauth" class="social-login" data-provider="facebook"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://github.com/login/oauth/authorize" class="social-login" data-provider="github"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.linkedin.com/oauth/v2/authorization" class="social-login" data-provider="linkedin"><i class='bx bxl-linkedin'></i></a>
                 </div>
             </form>
         </div>
@@ -119,8 +86,12 @@
                 <p>Vous avez déjà un compte ?</p>
                 <button class="btn login-btn">Se connecter</button>
             </div>
+
         </div>
+        
     </div>
+    
+    
 
     <script src="main.js"></script>
 </body>
