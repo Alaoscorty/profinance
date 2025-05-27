@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProFinance - Solutions de prêt professionnel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-hand-holding-usd text-3xl text-blue-600 mr-2"></i>
+                <span class="text-2xl font-bold text-blue-800">Pro<span class="text-blue-600">Finance</span></span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#accueil" class="font-medium hover:text-blue-600 transition">Accueil</a>
+                <a href="#services" class="font-medium hover:text-blue-600 transition">Nos services</a>
+                <a href="#avantages" class="font-medium hover:text-blue-600 transition">Avantages</a>
+                <a href="#simulateur" class="font-medium hover:text-blue-600 transition">Simulateur</a>
+                <a href="#contact" class="font-medium hover:text-blue-600 transition">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="connexion/formulaire.html#container" class="hidden md:block px-4 py-2 rounded-lg hover:bg-gray-100 transition">Connexion</a>
+                <a href="#demande" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition shadow-md">Demande en ligne</a>
+                <button id="mobile-menu-button" class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#accueil" class="py-2 hover:text-blue-600 transition">Accueil</a>
+                <a href="#services" class="py-2 hover:text-blue-600 transition">Nos services</a>
+                <a href="#avantages" class="py-2 hover:text-blue-600 transition">Avantages</a>
+                <a href="#simulateur" class="py-2 hover:text-blue-600 transition">Simulateur</a>
+                <a href="#contact" class="py-2 hover:text-blue-600 transition">Contact</a>
+                <div class="pt-2 border-t">
+                    <a href="connexion/formulaire.html#container" class="block py-2 hover:text-blue-600 transition">Connexion</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-gradient text-white py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Financez la croissance de votre entreprise</h1>
+                    <p class="text-xl opacity-90 mb-8">Des solutions de prêt sur mesure pour répondre aux besoins spécifiques de votre activité professionnelle.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#demande" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-bold text-lg shadow-lg transition text-center">Demander un prêt</a>
+                        <a href="#services" class="border-2 border-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-bold text-lg transition text-center">Nos solutions</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -top-6 -left-6 w-32 h-32 bg-blue-400 rounded-full opacity-20"></div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-300 rounded-full opacity-20"></div>
+                        <div class="relative bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-2xl p-8 shadow-xl border border-white border-opacity-20">
+                            <h3 class="text-2xl font-bold mb-4">Simulez votre prêt</h3>
+                            <div class="mb-6">
+                                <label class="block text-sm opacity-80 mb-2">Montant souhaité (€)</label>
+                                <input type="range" min="5000" max="500000" step="5000" value="100000" class="w-full h-2 bg-blue-200 rounded-lg appearance-none cursor-pointer">
+                                <div class="flex justify-between mt-2">
+                                    <span>5 000€</span>
+                                    <span class="font-bold text-lg">100 000€</span>
+                                    <span>500 000€</span>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-sm opacity-80 mb-2">Durée (mois)</label>
+                                <input type="range" min="12" max="84" step="6" value="36" class="w-full h-2 bg-blue-200 rounded-lg appearance-none cursor-pointer">
+                                <div class="flex justify-between mt-2">
+                                    <span>12 mois</span>
+                                    <span class="font-bold text-lg">36 mois</span>
+                                    <span>84 mois</span>
+                                </div>
+                            </div>
+                            <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                                <div class="flex justify-between mb-2">
+                                    <span>Mensualité estimée :</span>
+                                    <span class="font-bold">2 950€</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Taux estimé :</span>
+                                    <span class="font-bold">3.2%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <div class="bg-gray-50 py-8">
+        <div class="container mx-auto px-4">
+            <p class="text-center text-gray-500 mb-6">Ils nous font confiance</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                <img src="https://via.placeholder.com/120x40?text=Entreprise+A" alt="Logo entreprise" class="h-8 opacity-60 hover:opacity-100 transition">
+                <img src="https://via.placeholder.com/120x40?text=Entreprise+B" alt="Logo entreprise" class="h-8 opacity-60 hover:opacity-100 transition">
+                <img src="https://via.placeholder.com/120x40?text=Entreprise+C" alt="Logo entreprise" class="h-8 opacity-60 hover:opacity-100 transition">
+                <img src="https://via.placeholder.com/120x40?text=Entreprise+D" alt="Logo entreprise" class="h-8 opacity-60 hover:opacity-100 transition">
+                <img src="https://via.placeholder.com/120x40?text=Entreprise+E" alt="Logo entreprise" class="h-8 opacity-60 hover:opacity-100 transition">
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nos solutions de financement</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Découvrez nos différentes offres adaptées à tous les besoins professionnels</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Prêt investissement -->
+                <div class="loan-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <div class="bg-blue-600 p-6 text-white">
+                        <i class="fas fa-chart-line text-3xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Prêt investissement</h3>
+                        <p class="opacity-90">Financez vos projets de croissance et développement</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-6">
+                            <div class="flex justify-between py-2 border-b border-gray-100">
+                                <span>Montant :</span>
+                                <span class="font-medium">5 000€ à 500 000€</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-100">
+                                <span>Durée :</span>
+                                <span class="font-medium">12 à 84 mois</span>
+                            </div>
+                            <div class="flex justify-between py-2">
+                                <span>Taux :</span>
+                                <span class="font-medium text-blue-600">À partir de 2.9%</span>
+                            </div>
+                        </div>
+                        <a href="#" class="block text-center bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition">En savoir plus</a>
+                    </div>
+                </div>
+                
+                <!-- Crédit trésorerie -->
+                <div class="loan-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <div class="bg-blue-500 p-6 text-white">
+                        <i class="fas fa-coins text-3xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Crédit trésorerie</h3>
+                        <p class="opacity-90">Soulagez votre trésorerie et gérez vos flux financiers</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-6">
+                            <div class="flex justify-between py-2 border-b border-gray-100">
+                                <span>Montant :</span>
+                                <span class="font-medium">10 000€ à 200 000€</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-100">
+                                <span>Durée :</span>
+                                <span class="font-medium">3 à 24 mois</span>
+                            </div>
+                            <div class="flex justify-between py-2">
+                                <span>Taux :</span>
+                                <span class="font-medium text-blue-500">À partir de 3.5%</span>
+                            </div>
+                        </div>
+                        <a href="#" class="block text-center bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-medium transition">En savoir plus</a>
+                    </div>
+                </div>
+                
+                <!-- Prêt équipement -->
+                <div class="loan-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <div class="bg-blue-400 p-6 text-white">
+                        <i class="fas fa-tools text-3xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Prêt équipement</h3>
+                        <p class="opacity-90">Acquérez le matériel nécessaire à votre activité</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-6">
+                            <div class="flex justify-between py-2 border-b border-gray-100">
+                                <span>Montant :</span>
+                                <span class="font-medium">3 000€ à 300 000€</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-100">
+                                <span>Durée :</span>
+                                <span class="font-medium">12 à 60 mois</span>
+                            </div>
+                            <div class="flex justify-between py-2">
+                                <span>Taux :</span>
+                                <span class="font-medium text-blue-400">À partir de 2.5%</span>
+                            </div>
+                        </div>
+                        <a href="#" class="block text-center bg-blue-400 hover:bg-blue-500 text-white py-3 rounded-lg font-medium transition">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition">
+                    Voir toutes nos solutions
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avantages Section -->
+    <section id="avantages" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Pourquoi choisir ProFinance ?</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Nous mettons tout en œuvre pour faciliter l'accès au crédit professionnel</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Rapidité</h3>
+                    <p class="text-gray-600">Réponse de principe en 48h et versement sous 7 jours ouvrés après acceptation.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-percentage text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Taux compétitifs</h3>
+                    <p class="text-gray-600">Des taux négociés avec nos partenaires bancaires pour vous offrir les meilleures conditions.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-user-shield text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Accompagnement</h3>
+                    <p class="text-gray-600">Un conseiller dédié vous suit tout au long de votre projet et après.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-file-signature text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Flexibilité</h3>
+                    <p class="text-gray-600">Des échéances adaptées à votre activité et possibilité de différé.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-euro-sign text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Pas de frais cachés</h3>
+                    <p class="text-gray-600">Aucun frais de dossier, de garantie ou de remboursement anticipé.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-lock text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sécurité</h3>
+                    <p class="text-gray-600">Vos données sont protégées et traitées de manière confidentielle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-blue-800 text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2">15M€</div>
+                    <div class="text-blue-200">Prêtés chaque mois</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2">98%</div>
+                    <div class="text-blue-200">Clients satisfaits</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2">2 500+</div>
+                    <div class="text-blue-200">Entreprises financées</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2">24h</div>
+                    <div class="text-blue-200">Réponse moyenne</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ils nous recommandent</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Découvrez ce que nos clients disent de notre service</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Grâce à ProFinance, j'ai pu moderniser mon atelier avec du matériel dernier cri. Le processus a été incroyablement simple et rapide."</p>
+                    <div class="flex items-center">
+                        <img src="https://via.placeholder.com/50?text=PD" alt="Photo" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <div class="font-bold">Pierre D.</div>
+                            <div class="text-sm text-gray-500">Artisan menuisier</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Notre restaurant a pu survivre à la crise grâce au crédit trésorerie de ProFinance. Le conseiller a été à l'écoute de nos besoins spécifiques."</p>
+                    <div class="flex items-center">
+                        <img src="https://via.placeholder.com/50?text=ML" alt="Photo" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <div class="font-bold">Marie L.</div>
+                            <div class="text-sm text-gray-500">Gérante de restaurant</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Le prêt investissement nous a permis d'ouvrir une deuxième boutique. Les conditions étaient bien meilleures qu'à la banque."</p>
+                    <div class="flex items-center">
+                        <img src="https://via.placeholder.com/50?text=TC" alt="Photo" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <div class="font-bold">Thomas C.</div>
+                            <div class="text-sm text-gray-500">Co-fondateur d'une marque de vêtements</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Application Form -->
+    <section id="demande" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-2/5 bg-blue-600 text-white p-8 md:p-12">
+                        <h2 class="text-2xl font-bold mb-6">Demande de prêt professionnel</h2>
+                        <p class="mb-8">Remplissez ce formulaire pour obtenir une réponse de principe sous 48h.</p>
+                        
+                        <div class="mb-8">
+                            <h3 class="font-bold mb-4">Étapes du processus</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center mr-3">
+                                        <span class="text-white font-bold">1</span>
+                                    </div>
+                                    <span>Informations de base</span>
+                                </div>
+                                <div class="flex items-center opacity-50">
+                                    <div class="w-8 h-8 rounded-full bg-blue-400 flex items-center justify-center mr-3">
+                                        <span class="text-white font-bold">2</span>
+                                    </div>
+                                    <span>Détails du projet</span>
+                                </div>
+                                <div class="flex items-center opacity-50">
+                                    <div class="w-8 h-8 rounded-full bg-blue-400 flex items-center justify-center mr-3">
+                                        <span class="text-white font-bold">3</span>
+                                    </div>
+                                    <span>Situation financière</span>
+                                </div>
+                                <div class="flex items-center opacity-50">
+                                    <div class="w-8 h-8 rounded-full bg-blue-400 flex items-center justify-center mr-3">
+                                        <span class="text-white font-bold">4</span>
+                                    </div>
+                                    <span>Validation</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-700 bg-opacity-30 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2">Documents nécessaires :</h4>
+                            <ul class="text-sm space-y-1">
+                                <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-blue-300"></i> Pièce d'identité</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-blue-300"></i> KBis de moins de 3 mois</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-blue-300"></i> 3 derniers bilans</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-blue-300"></i> Dernier avis d'imposition</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-3/5 p-8 md:p-12">
+                        <div class="mb-6">
+                            <div class="h-2 bg-gray-200 rounded-full">
+                                <div class="progress-bar bg-blue-600 rounded-full" style="width: 25%"></div>
+                            </div>
+                        </div>
+                        
+                        <form id="loan-form">
+                            <!-- Step 1 -->
+                            <div class="form-step active" data-step="1">
+                                <h3 class="text-xl font-bold mb-6">Informations sur votre entreprise</h3>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Forme juridique</label>
+                                        <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                                            <option>Sélectionnez...</option>
+                                            <option>SARL</option>
+                                            <option>SAS</option>
+                                            <option>EI</option>
+                                            <option>Auto-entrepreneur</option>
+                                            <option>Autre</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Secteur d'activité</label>
+                                        <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                                            <option>Sélectionnez...</option>
+                                            <option>Artisanat</option>
+                                            <option>Commerce</option>
+                                            <option>Services</option>
+                                            <option>Industrie</option>
+                                            <option>Agriculture</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <label class="block text-gray-700 mb-2">Raison sociale</label>
+                                    <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <label class="block text-gray-700 mb-2">SIRET</label>
+                                    <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none" placeholder="123 456 789 00012">
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <label class="block text-gray-700 mb-2">Date de création</label>
+                                    <input type="date" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <label class="block text-gray-700 mb-2">Effectif</label>
+                                    <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                                        <option>Sélectionnez...</option>
+                                        <option>0 salarié</option>
+                                        <option>1 à 2 salariés</option>
+                                        <option>3 à 5 salariés</option>
+                                        <option>6 à 9 salariés</option>
+                                        <option>10 salariés ou plus</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mt-8 flex justify-end">
+                                    <button type="button" class="next-step bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition">Suivant</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 2 -->
+                            <div class="form-step" data-step="2">
+                                <h3 class="text-xl font-bold mb-6">Détails de votre projet</h3>
+                                
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Type de prêt souhaité</label>
+                                    <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                                        <option>Sélectionnez...</option>
+                                        <option>Prêt investissement</option>
+                                        <option>Crédit trésorerie</option>
+                                        <option>Prêt équipement</option>
+                                        <option>Autre</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <label class="block text-gray-700 mb-2">Montant souhaité (€)</label>
+                                    <input type="number" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none" placeholder="50 000">
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <label class="block text-gray-700 mb-2">Durée souhaitée (mois)</label>
+                                    <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                                        <option>12 mois</option>
+                                        <option>24 mois</option>
+                                        <option>36 mois</option>
+                                        <option>48 mois</option>
+                                        <option>60 mois</option>
+                                        <option>72 mois</option>
+                                        <option>84 mois</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <label class="block text-gray-700 mb-2">Description du projet</label>
+                                    <textarea class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none" rows="4" placeholder="Décrivez en quelques mots l'utilisation prévue du prêt..."></textarea>
+                                </div>
+                                
+                                <div class="mt-8 flex justify-between">
+                                    <button type="button" class="prev-step bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium transition">Précédent</button>
+                                    <button type="button" class="next-step bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition">Suivant</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 3 -->
+                            <div class="form-step" data-step="3">
+                                <h3 class="text-xl font-bold mb-6">Situation financière</h3>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Chiffre d'affaires annuel (€)</label>
+                                        <input type="number" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Résultat net (€)</label>
+                                        <input type="number" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <label class="block text-gray-700 mb-2">Endettement actuel (€)</label>
+                                    <input type="number" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <label class="block text-gray-700 mb-2">Garanties proposées</label>
+                                    <div class="space-y-2">
+                                        <label class="flex items-center">
+                                            <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                                            <span class="ml-2">Nantissement de matériel</span>
+                                        </label>
+                                        <label class="flex items-center">
+                                            <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                                            <span class="ml-2">Caution personnelle</span>
+                                        </label>
+                                        <label class="flex items-center">
+                                            <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                                            <span class="ml-2">Caution solidaire</span>
+                                        </label>
+                                        <label class="flex items-center">
+                                            <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                                            <span class="ml-2">Autre garantie</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-8 flex justify-between">
+                                    <button type="button" class="prev-step bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium transition">Précédent</button>
+                                    <button type="button" class="next-step bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition">Suivant</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 4 -->
+                            <div class="form-step" data-step="4">
+                                <h3 class="text-xl font-bold mb-6">Coordonnées du responsable</h3>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Prénom</label>
+                                        <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Nom</label>
+                                        <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <label class="block text-gray-700 mb-2">Fonction</label>
+                                    <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <label class="block text-gray-700 mb-2">Email</label>
+                                    <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <label class="block text-gray-700 mb-2">Téléphone</label>
+                                    <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" required>
+                                        <span class="ml-2 text-gray-700">J'accepte les <a href="#" class="text-blue-600 hover:underline">conditions générales</a> et la <a href="#" class="text-blue-600 hover:underline">politique de confidentialité</a></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="mt-8 flex justify-between">
+                                    <button type="button" class="prev-step bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium transition">Précédent</button>
+                                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition">Envoyer la demande</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Success Message -->
+                            <div id="success-message" class="hidden text-center py-12">
+                                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <i class="fas fa-check-circle text-green-600 text-4xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4">Demande envoyée avec succès !</h3>
+                                <p class="text-gray-600 mb-8">Nous avons bien reçu votre demande de prêt professionnel. Un conseiller vous contactera dans les 48 heures.</p>
+                                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition">Retour à l'accueil</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="simulateur" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Questions fréquentes</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Trouvez les réponses aux questions les plus courantes</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <!-- Question 1 -->
+                    <div class="border-b border-gray-200">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 hover:bg-gray-50 transition text-left">
+                            <span class="text-lg font-medium">Quels sont les critères d'éligibilité ?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 pt-2">
+                            <p class="text-gray-600">Pour être éligible à un prêt professionnel ProFinance, votre entreprise doit :</p>
+                            <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-600">
+                                <li>Être immatriculée en France depuis au moins 12 mois</li>
+                                <li>Présenter un chiffre d'affaires minimum de 50 000€ par an</li>
+                                <li>Ne pas être en situation de redressement ou liquidation judiciaire</li>
+                                <li>Disposer d'une capacité de remboursement suffisante</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 2 -->
+                    <div class="border-b border-gray-200">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 hover:bg-gray-50 transition text-left">
+                            <span class="text-lg font-medium">Quel est le délai pour obtenir les fonds ?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 pt-2">
+                            <p class="text-gray-600">Le processus complet prend généralement entre 7 et 15 jours ouvrés :</p>
+                            <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-600">
+                                <li>Réponse de principe sous 48h après réception du dossier complet</li>
+                                <li>Étude approfondie et validation sous 3 à 5 jours</li>
+                                <li>Versement des fonds sous 2 à 5 jours après signature</li>
+                            </ul>
+                            <p class="mt-3 text-gray-600">Les délais peuvent varier en fonction de la complexité de votre dossier.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 3 -->
+                    <div class="border-b border-gray-200">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 hover:bg-gray-50 transition text-left">
+                            <span class="text-lg font-medium">Peut-on rembourser par anticipation ?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 pt-2">
+                            <p class="text-gray-600">Oui, tous nos prêts professionnels peuvent être remboursés par anticipation, sans frais ni pénalités.</p>
+                            <p class="mt-2 text-gray-600">Vous pouvez effectuer un remboursement partiel ou total à tout moment, selon les modalités suivantes :</p>
+                            <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-600">
+                                <li>Remboursement total : annulation immédiate du prêt</li>
+                                <li>Remboursement partiel : réduction des mensualités ou de la durée</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 4 -->
+                    <div class="border-b border-gray-200">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 hover:bg-gray-50 transition text-left">
+                            <span class="text-lg font-medium">Quelle est la différence avec un crédit bancaire ?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 pt-2">
+                            <p class="text-gray-600">ProFinance propose des solutions alternatives aux crédits bancaires traditionnels, avec plusieurs avantages :</p>
+                            <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-600">
+                                <li>Délais de réponse et de traitement plus rapides</li>
+                                <li>Processus simplifié avec moins de documents requis</li>
+                                <li>Conditions adaptées aux TPE/PME et indépendants</li>
+                                <li>Accompagnement personnalisé tout au long du prêt</li>
+                            </ul>
+                            <p class="mt-3 text-gray-600">Nous travaillons avec plusieurs partenaires financiers pour vous proposer les meilleures conditions.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div class="border-b border-gray-200">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 hover:bg-gray-50 transition text-left">
+                            <span class="text-lg font-medium">Comment sont calculés les taux d'intérêt ?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 pt-2">
+                            <p class="text-gray-600">Nos taux sont calculés en fonction de plusieurs critères :</p>
+                            <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-600">
+                                <li>La santé financière de votre entreprise</li>
+                                <li>La durée et le montant du prêt</li>
+                                <li>Les garanties apportées</li>
+                                <li>Les conditions du marché au moment de la demande</li>
+                            </ul>
+                            <p class="mt-3 text-gray-600">Le taux proposé est fixe et garanti pendant toute la durée du prêt. Vous pouvez obtenir une estimation personnalisée via notre simulateur en ligne.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="#" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition">
+                        Vous avez d'autres questions ?
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Prêt à développer votre entreprise ?</h2>
+            <p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto">Nos conseillers sont à votre disposition pour étudier votre projet et vous proposer la solution la plus adaptée.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#demande" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-bold text-lg shadow-lg transition">Demander un prêt</a>
+                <a href="#contact" class="border-2 border-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-bold text-lg transition">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Contactez-nous</h2>
+                    <p class="text-lg text-gray-600 mb-8">Nos équipes sont disponibles pour répondre à toutes vos questions sur nos solutions de financement.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Adresse</h4>
+                                <p class="text-gray-600">15 Rue du Commerce<br>75002 Paris, France</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Téléphone</h4>
+                                <p class="text-gray-600">01 23 45 67 89<br>Du lundi au vendredi, 9h-18h</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Email</h4>
+                                <p class="text-gray-600">contact@profinance.fr<br>Réponse sous 24h</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-bold mb-4">Suivez-nous</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-400 hover:bg-blue-500 text-white rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-800 hover:bg-blue-900 text-white rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-white rounded-xl shadow-md p-8">
+                        <h3 class="text-xl font-bold mb-6">Envoyez-nous un message</h3>
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Prénom</label>
+                                    <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Nom</label>
+                                    <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6">
+                                <label class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                            </div>
+                            
+                            <div class="mt-6">
+                                <label class="block text-gray-700 mb-2">Téléphone</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                            </div>
+                            
+                            <div class="mt-6">
+                                <label class="block text-gray-700 mb-2">Sujet</label>
+                                <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none">
+                                    <option>Sélectionnez un sujet</option>
+                                    <option>Demande d'information</option>
+                                    <option>Suivi de dossier</option>
+                                    <option>Réclamation</option>
+                                    <option>Autre</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mt-6">
+                                <label class="block text-gray-700 mb-2">Message</label>
+                                <textarea class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none" rows="5"></textarea>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition">Envoyer le message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-hand-holding-usd text-3xl text-blue-400 mr-2"></i>
+                        <span class="text-2xl font-bold">Pro<span class="text-blue-400">Finance</span></span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Solutions de financement professionnel adaptées à tous les besoins des entreprises et indépendants.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Nos solutions</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Prêt investissement</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Crédit trésorerie</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Prêt équipement</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Financement professionnel</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Crédit bail</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Entreprise</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">À propos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Nos engagements</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Carrières</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Actualités</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Presse</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Informations</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#simulateur" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Mentions légales</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">CGU</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Politique de confidentialité</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Tarifs et conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">© 2025 ProFinance. Tous droits réservés.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition">Plan du site</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">Accessibilité</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ toggle
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Loan form steps
+        const formSteps = document.querySelectorAll('.form-step');
+        const nextButtons = document.querySelectorAll('.next-step');
+        const prevButtons = document.querySelectorAll('.prev-step');
+        const progressBar = document.querySelector('.progress-bar');
+        const loanForm = document.getElementById('loan-form');
+        const successMessage = document.getElementById('success-message');
+
+        let currentStep = 1;
+        const totalSteps = 4;
+
+        function updateProgress() {
+            const progress = (currentStep / totalSteps) * 100;
+            progressBar.style.width = `${progress}%`;
+            
+            // Update step indicators
+            document.querySelectorAll('[data-step]').forEach(step => {
+                step.classList.remove('active');
+            });
+            document.querySelector(`[data-step="${currentStep}"]`).classList.add('active');
+        }
+
+        nextButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    updateProgress();
+                }
+            });
+        });
+
+        prevButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                if (currentStep > 1) {
+                    currentStep--;
+                    updateProgress();
+                }
+            });
+        });
+
+        loanForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            loanForm.style.display = 'none';
+            successMessage.classList.remove('hidden');
+        });
+
+        // Simulate loan calculation
+        const amountSlider = document.querySelector('input[type="range"]:first-of-type');
+        const durationSlider = document.querySelector('input[type="range"]:last-of-type');
+        
+        function updateLoanEstimation() {
+            const amount = parseInt(amountSlider.value);
+            const duration = parseInt(durationSlider.value);
+            
+            // Simple estimation formula (for demo purposes)
+            const rate = 2.5 + (amount / 100000) + (duration / 100);
+            const monthlyPayment = (amount * (1 + rate/100)) / duration;
+            
+            document.querySelector('.font-bold.text-lg:first-of-type').textContent = `${amount.toLocaleString()}€`;
+            document.querySelector('.font-bold.text-lg:last-of-type').textContent = `${duration} mois`;
+            document.querySelector('.bg-white.bg-opacity-20 .font-bold:first-of-type').textContent = `${monthlyPayment.toFixed(0)}€`;
+            document.querySelector('.bg-white.bg-opacity-20 .font-bold:last-of-type').textContent = `${rate.toFixed(1)}%`;
+        }
+        
+        amountSlider.addEventListener('input', updateLoanEstimation);
+        durationSlider.addEventListener('input', updateLoanEstimation);
+        
+        // Initialize
+        updateLoanEstimation();
+    </script>
+</body>
+</html>
