@@ -145,7 +145,31 @@
                                 <span class="font-medium text-blue-600">À partir de 2.9%</span>
                             </div>
                         </div>
-                        <a href="#" class="block text-center bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition">En savoir plus</a>
+                        <!-- Bouton et contenu explicatif pour Prêt investissement -->
+                        <button type="button" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition focus:outline-none" onclick="toggleInvestissementInfo(this)">
+                            En savoir plus
+                        </button>
+                        <div class="investissement-info hidden mt-4 text-gray-700 text-left bg-blue-50 border border-blue-100 rounded-lg p-4">
+                            <h4 class="font-bold mb-2 text-blue-600">À propos du Prêt investissement</h4>
+                            <p class="mb-2">Le prêt investissement vous permet de financer vos projets de développement, l'achat de fonds de commerce, ou l'ouverture d'un nouvel établissement.</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Montant élevé pour accompagner la croissance</li>
+                                <li>Durée flexible jusqu'à 7 ans</li>
+                                <li>Idéal pour financer des projets structurants</li>
+                            </ul>
+                        </div>
+                        <script>
+                        function toggleInvestissementInfo(btn) {
+                            const info = btn.nextElementSibling;
+                            if (info.classList.contains('hidden')) {
+                                info.classList.remove('hidden');
+                                btn.textContent = "Masquer les infos";
+                            } else {
+                                info.classList.add('hidden');
+                                btn.textContent = "En savoir plus";
+                            }
+                        }
+                        </script></ul>
                     </div>
                 </div>
                 
@@ -171,7 +195,31 @@
                                 <span class="font-medium text-blue-500">À partir de 3.5%</span>
                             </div>
                         </div>
-                        <a href="#" class="block text-center bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-medium transition">En savoir plus</a>
+                        <!-- Bouton et contenu explicatif pour Crédit trésorerie -->
+                        <button type="button" class="block w-full text-center bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-medium transition focus:outline-none" onclick="toggleTreasuryInfo(this)">
+                            En savoir plus
+                        </button>
+                        <div class="treasury-info hidden mt-4 text-gray-700 text-left bg-blue-50 border border-blue-100 rounded-lg p-4">
+                            <h4 class="font-bold mb-2 text-blue-600">À propos du Crédit trésorerie</h4>
+                            <p class="mb-2">Le crédit trésorerie est conçu pour répondre rapidement à vos besoins de liquidités, financer un décalage de trésorerie ou faire face à des imprévus.</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Décaissement rapide après acceptation du dossier</li>
+                                <li>Souple : remboursement anticipé possible sans frais</li>
+                                <li>Idéal pour gérer les périodes creuses ou financer des achats urgents</li>
+                            </ul>
+                        </div>
+                        <script>
+                        function toggleTreasuryInfo(btn) {
+                            const info = btn.nextElementSibling;
+                            if (info.classList.contains('hidden')) {
+                                info.classList.remove('hidden');
+                                btn.textContent = "Masquer les infos";
+                            } else {
+                                info.classList.add('hidden');
+                                btn.textContent = "En savoir plus";
+                            }
+                        }
+                        </script>
                     </div>
                 </div>
                 
@@ -197,14 +245,40 @@
                                 <span class="font-medium text-blue-400">À partir de 2.5%</span>
                             </div>
                         </div>
-                        <a href="#" class="block text-center bg-blue-400 hover:bg-blue-500 text-white py-3 rounded-lg font-medium transition">En savoir plus</a>
+                        <!-- Bouton et contenu explicatif pour Prêt équipement -->
+                        <button type="button" class="block w-full text-center bg-blue-400 hover:bg-blue-500 text-white py-3 rounded-lg font-medium transition focus:outline-none" onclick="toggleEquipementInfo(this)">
+                            En savoir plus
+                        </button>
+                        <div class="equipement-info hidden mt-4 text-gray-700 text-left bg-blue-50 border border-blue-100 rounded-lg p-4">
+                            <h4 class="font-bold mb-2 text-blue-600">À propos du Prêt équipement</h4>
+                            <p class="mb-2">Le prêt équipement vous permet de financer l'achat ou le renouvellement de vos machines, véhicules ou outils professionnels.</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Montant adapté à tous types d'équipements</li>
+                                <li>Durée flexible jusqu'à 5 ans</li>
+                                <li>Idéal pour moderniser ou remplacer votre matériel</li>
+                            </ul>
+                        </div>
+                        <script>
+                        function toggleEquipementInfo(btn) {
+                            const info = btn.nextElementSibling;
+                            if (info.classList.contains('hidden')) {
+                                info.classList.remove('hidden');
+                                btn.textContent = "Masquer les infos";
+                            } else {
+                                info.classList.add('hidden');
+                                btn.textContent = "En savoir plus";
+                            }
+                        }
+                        </script>
                     </div>
                 </div>
             </div>
             
             <div class="text-center mt-12">
                 <a href="#" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition">
-                    Voir toutes nos solutions
+                    <span id="show-more-solutions" class="cursor-pointer">
+                        Voir toutes nos solutions
+                    </span>
                     <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
